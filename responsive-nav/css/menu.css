@@ -1,8 +1,25 @@
+nav {
+  float: right;
+}
+
+li a {
+  display: block;
+  padding: 2em;
+}
+
+label {
+  padding: 2em;
+  float: right;
+}
+
 /* Basic functionality for toggling the menu display */
 ul {
+  margin: 1.5em;
+  clear: both;
+  list-style: none;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1s ease-in;
+  transition: max-height 0.2s ease;
 }
 
 #toggler:checked ~ ul {
@@ -28,6 +45,7 @@ ul {
 .hamburger:after {
   position: absolute;
   content: '';
+  transition: all 0.2s ease;
 }
 
 /* top bun */
@@ -58,4 +76,25 @@ ul {
 #toggler:checked ~ label .hamburger:after {
   transform: rotate(45deg);
   top: 0;
+}
+
+/* Remove the hamburger menu when the viewport is 768px or more. */
+@media (min-width: 42em) {
+  /* Hide the hamburger */
+  label {
+    display: none;
+  }
+
+  ul {
+    max-height: none;
+  }
+
+  li {
+    float: left;
+  }
+
+  li a {
+    padding: 0 2em;
+    border-right: 1px solid black;
+  }
 }
