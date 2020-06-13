@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  display: inline-block;
+  margin: 2em;
+  /* float: right; */
+}
 /* 1. Toggle the menu */
 ul {
   max-height: 0;
@@ -7,31 +17,32 @@ ul {
 #toggler:checked ~ ul {
   max-height: 240px;
 }
+
 /* 2. Display the hamburger */
-.hamburger,
-.hamburger:before,
-.hamburger:after {
+#hamburger,
+#hamburger::before,
+#hamburger::after {
   display: block;
   height: 2px;
   width: 25px;
   background-color: black;
 }
 
-.hamburger {
+#hamburger {
   position: relative;
 }
 
-.hamburger:before,
-.hamburger:after {
+#hamburger::before,
+#hamburger::after {
   position: absolute;
   content: '';
 }
 
-.hamburger:before {
+#hamburger::before {
   top: -5px;
 }
 
-.hamburger:after {
+#hamburger::after {
   top: 5px;
 }
 
@@ -41,16 +52,16 @@ ul {
 }
 
 /* 4. Change hamburger to an X when the menu is open */
-#toggler:checked ~ label .hamburger {
+#toggler:checked ~ label #hamburger {
   background: transparent;
 }
 
-#toggler:checked ~ label .hamburger:before {
+#toggler:checked ~ label #hamburger::before {
   transform: rotate(-45deg);
   top: 0;
 }
 
-#toggler:checked ~ label .hamburger:after {
+#toggler:checked ~ label #hamburger::after {
   transform: rotate(45deg);
   top: 0;
 }
