@@ -1,0 +1,29 @@
+.radius {
+  border-radius: 100%;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+.background-img {
+  background-image: url('../images/dark-wave.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bkgrndimg {
+  background-image: url('../images/bluewave.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div {
+  border: 1px solid black;
+}
+
+img {
+  border: 10px groove red;
+}

@@ -2,20 +2,20 @@ nav {
   float: right;
 }
 
-li a {
+label {
   display: block;
-  padding: 2em;
+  margin: 1.5em;
+  padding: 0.5em;
+  width: 1em;
+  border: 1px solid #333;
 }
 
-label {
-  padding: 2em;
-  float: right;
+li {
+  padding: 1em;
 }
 
 /* Basic functionality for toggling the menu display */
 ul {
-  margin: 1.5em;
-  clear: both;
   list-style: none;
   max-height: 0;
   overflow: hidden;
@@ -27,9 +27,9 @@ ul {
 }
 
 /* Build the hambuger */
-.hamburger,
-.hamburger:before,
-.hamburger:after {
+#hamburger,
+#hamburger::before,
+#hamburger::after {
   display: block; /* Because <span> is an inline element */
   height: 2px;
   width: 25px;
@@ -37,24 +37,24 @@ ul {
 }
 
 /* the burger */
-.hamburger {
+#hamburger {
   position: relative;
 }
 
-.hamburger:before,
-.hamburger:after {
+#hamburger::before,
+#hamburger::after {
   position: absolute;
   content: '';
   transition: all 0.2s ease;
 }
 
 /* top bun */
-.hamburger:before {
+#hamburger::before {
   top: -5px;
 }
 
 /* bottom bun */
-.hamburger:after {
+#hamburger::after {
   top: 5px;
 }
 
@@ -64,21 +64,24 @@ ul {
 }
 
 /* Transform the hamburger into an 'X' when the menu is open */
-#toggler:checked ~ label .hamburger {
+#toggler:checked ~ label #hamburger {
   background: transparent;
 }
 
-#toggler:checked ~ label .hamburger:before {
+#toggler:checked ~ label #hamburger::before,
+#toggler:checked ~ label #hamburger::after {
+  top: 0;
+}
+
+#toggler:checked ~ label #hamburger::before {
   transform: rotate(-45deg);
-  top: 0;
 }
 
-#toggler:checked ~ label .hamburger:after {
+#toggler:checked ~ label #hamburger::after {
   transform: rotate(45deg);
-  top: 0;
 }
 
-/* Remove the hamburger menu when the viewport is 768px or more. */
+/* Remove the hamburger menu when the viewport is 672px or more. */
 @media (min-width: 42em) {
   /* Hide the hamburger */
   label {
@@ -87,14 +90,12 @@ ul {
 
   ul {
     max-height: none;
+    margin: 1.5em 2em 0 0;
   }
 
   li {
     float: left;
-  }
-
-  li a {
-    padding: 0 2em;
+    padding: 0 1.5em;
     border-right: 1px solid black;
   }
 }

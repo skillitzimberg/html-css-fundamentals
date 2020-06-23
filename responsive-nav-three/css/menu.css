@@ -1,0 +1,94 @@
+nav {
+  float: right;
+  border: 1px solid black;
+}
+
+ul {
+  max-height: 0;
+  overflow: hidden;
+  list-style: none;
+  clear: both;
+  transition: all 0.2s ease;
+}
+
+li {
+  padding: 1em;
+}
+
+label {
+  display: block;
+  float: right;
+  margin: 1em;
+  padding: 0.5em 0.2em;
+  border: 1px solid black;
+}
+
+#toggler:checked ~ ul {
+  max-height: 15em;
+}
+
+#hamburger,
+#hamburger::before,
+#hamburger::after {
+  display: block;
+  width: 1.8em;
+  height: 0.1em;
+  background: black;
+}
+
+#hamburger {
+  position: relative;
+}
+
+#hamburger::before,
+#hamburger::after {
+  position: absolute;
+  content: '';
+  transition: transform 0.2s ease;
+}
+
+#hamburger::before {
+  top: -5px;
+}
+
+#hamburger::after {
+  top: 5px;
+}
+
+#toggler {
+  display: none;
+}
+
+#toggler:checked ~ label #hamburger {
+  background: transparent;
+}
+
+#toggler:checked ~ label #hamburger:before,
+#toggler:checked ~ label #hamburger:after {
+  top: 0;
+}
+
+#toggler:checked ~ label #hamburger:before {
+  transform: rotate(-45deg);
+}
+
+#toggler:checked ~ label #hamburger:after {
+  transform: rotate(45deg);
+}
+
+@media (min-width: 42em) {
+  label {
+    display: none;
+  }
+
+  ul {
+    max-height: none;
+    margin: 1.2em 1.5em 0 0;
+  }
+
+  li {
+    float: left;
+    padding: 0 1.5em;
+    border-right: 1px solid #333;
+  }
+}
