@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 	"text/template"
 )
@@ -16,12 +17,10 @@ func main() {
 	http.Handle("/", fs)
 	http.HandleFunc("/about", about)
 	http.Handle("/favicon.ico", http.NotFoundHandler())
-	http.ListenAndServe("localhost:8080", nil)
-}
-
-func serveClient() {
-	fs := http.FileServer(http.Dir("./client"))
-	http.Handle("/", fs)
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func about(w http.ResponseWriter, req *http.Request) {
