@@ -1,8 +1,21 @@
-* {
-  margin: 0;
-  padding: 0;
+article {
+  border: 1px solid black;
+  width: 80%;
+  margin: 5% auto;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+p {
+  border: 1px solid black;
+}
+
+.add-pad {
+  padding: 20px;
+}
+
+.box {
+  box-sizing: border-box;
+}
+
+.border {
+  border: 20px solid black;
 }
