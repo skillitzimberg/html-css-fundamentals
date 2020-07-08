@@ -14,11 +14,15 @@ ul {
 li {
   display: inline-block;
   margin: 1rem 0.5rem 0 0;
-  padding-right: 1rem;
-  border-right: 1px solid black;
+  border-right: 3px solid black;
   border-radius: 1rem;
 }
 
 li:hover {
   background-color: aqua;
+}
+
+a {
+  display: inline-block;
+  padding-right: 1rem;
 }
