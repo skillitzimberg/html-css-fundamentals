@@ -1,9 +1,15 @@
+body {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 div {
   width: 8rem;
   height: 4rem;
   border: 2px solid black;
   margin: 0.2rem;
-  display: inline-block;
   border-radius: 2rem;
 }
 
